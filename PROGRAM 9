@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main() {
+    int a[5] = {10,20,30,40,50}, n=40, l=0, h=4, m;
+    while(l<=h) {
+        m=(l+h)/2;
+        if(a[m]==n) { printf("Found at index %d",m); return 0; }
+        else if(a[m]<n) l=m+1;
+        else h=m-1;
+    }
+    printf("Not Found");
+    return 0;
+}
