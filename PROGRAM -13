@@ -1,0 +1,14 @@
+#include <stdio.h>
+#define SIZE 5
+int q[SIZE], f=0, r=-1;
+
+void enqueue(int x){ if(r<SIZE-1) q[++r]=x; }
+void dequeue(){ if(f<=r) f++; }
+void display(){ for(int i=f;i<=r;i++) printf("%d ",q[i]); }
+
+int main(){
+    enqueue(10); enqueue(20); enqueue(30);
+    display(); printf("\n");
+    dequeue(); display();
+    return 0;
+}
