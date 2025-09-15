@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node{int data;struct Node* l,*r;};
+struct Node* newNode(int d){
+    struct Node* n=(struct Node*)malloc(sizeof(struct Node));
+    n->data=d;n->l=n->r=NULL;return n;
+}
+struct Node* insert(struct Node* r,int d){
+    if(!r) return newNode(d);
+    if(d<r->data) r->l=insert(r->l,d);
+    else r->r=insert(r->r,d);
+    return r;
+}
+void inorder(struct Node* r,int *k,int val[]){
+    if(!r) return;
+    inorder(r->l,k,val);
+    val[(*k)++]=r->data;
+    inorder(r->r,k,val);
+}
+int main(){
+    int arr[]={5,3,7,2,4},i; 
+    struct Node* root=NULL;
+    for(i=0;i<5;i++) root=insert(root,arr[i]);
+    int val[10],k=0; inorder(root,&k,val);
+    int kth=3; // 3rd minimum
+    printf("%dth min = %d",kth,val[kth-1]);
+    return 0;
+}
