@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main(){
+    int a[2][2]={{1,2},{3,4}},r,c;
+    for(r=0;r<2;r++){int sum=0;for(c=0;c<2;c++) sum+=a[r][c];printf("Row%d=%d\n",r,sum);}
+    for(c=0;c<2;c++){int sum=0;for(r=0;r<2;r++) sum+=a[r][c];printf("Col%d=%d\n",c,sum);}
+    return 0;
+}
