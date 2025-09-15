@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct Node{ char c; struct Node* next; };
+
+int main(){
+    char str[]="level"; int i,len=strlen(str);
+    struct Node* head=NULL,*temp,*n;
+    for(i=0;i<len;i++){ 
+        n=(struct Node*)malloc(sizeof(struct Node));
+        n->c=str[i]; n->next=NULL;
+        if(!head) head=n; else temp->next=n;
+        temp=n;
+    }
+    // Copy into array
+    char arr[20]; temp=head; i=0;
+    while(temp){ arr[i++]=temp->c; temp=temp->next; }
+    arr[i]='\0';
+    // Check palindrome
+    int l=0,r=len-1,flag=1;
+    while(l<r){ if(arr[l]!=arr[r]){flag=0;break;} l++; r--; }
+    if(flag) printf("Palindrome");
+    else printf("Not Palindrome");
+    return 0;
+}
