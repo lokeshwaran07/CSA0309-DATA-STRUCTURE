@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node{int d;struct Node* next;};
+int main(){
+    struct Node* h=NULL,*t,*n;
+    for(int i=1;i<=3;i++){n=malloc(sizeof(*n));n->d=i;n->next=NULL;if(!h) h=n;else t->next=n;t=n;}
+    // reverse
+    struct Node* prev=NULL,*cur=h,*next;
+    while(cur){next=cur->next;cur->next=prev;prev=cur;cur=next;}
+    h=prev; t=h; while(t){printf("%d ",t->d);t=t->next;}
+    return 0;
+}
