@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node{int data;struct Node* next;};
+struct Node* newNode(int d){
+    struct Node* n=(struct Node*)malloc(sizeof(struct Node));
+    n->data=d;n->next=NULL; return n;
+}
+int main(){
+    struct Node* a=newNode(1);
+    a->next=newNode(2);
+    a->next->next=newNode(3);
+    struct Node* b=newNode(3); // intersect at 3
+    if(a->next->next->data==b->data) 
+        printf("Intersect at %d",b->data);
+    return 0;
+}
