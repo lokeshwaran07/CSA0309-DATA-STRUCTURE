@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main(){
+    int a[5]={10,20,30,40,50}, key=30, i, found=0;
+    // Linear
+    for(i=0;i<5;i++) if(a[i]==key){found=1;break;}
+    printf("Linear Search: %s\n", found?"Found":"Not Found");
+    // Binary
+    int low=0, high=4, mid; found=0;
+    while(low<=high){
+        mid=(low+high)/2;
+        if(a[mid]==key){found=1;break;}
+        else if(key<a[mid]) high=mid-1;
+        else low=mid+1;
+    }
+    printf("Binary Search: %s\n", found?"Found":"Not Found");
+    return 0;
+}
