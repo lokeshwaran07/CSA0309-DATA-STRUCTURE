@@ -1,0 +1,16 @@
+#include <stdio.h>
+#define MAX 5
+int q1[MAX],q2[MAX],f1=0,r1=0,f2=0,r2=0;
+void push(int x){ q1[r1++]=x; }
+int pop(){
+    while(r1-f1>1) q2[r2++]=q1[f1++];
+    int val=q1[f1++]; // last element
+    for(int i=f2;i<r2;i++) q1[i-f2]=q2[i];
+    r1=r2; f1=0; r2=f2=0;
+    return val;
+}
+int main(){
+    push(10);push(20);push(30);
+    printf("Pop=%d",pop());
+    return 0;
+}
