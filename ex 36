@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node{int d;struct Node*l,*r;};
+struct Node* n(int d){struct Node* t=malloc(sizeof(*t));t->d=d;t->l=t->r=NULL;return t;}
+void preorder(struct Node*r){if(r){printf("%d ",r->d);preorder(r->l);preorder(r->r);}}
+int main(){
+    struct Node* root=n(1);root->l=n(2);root->r=n(3);
+    preorder(root);
+    return 0;
+}
