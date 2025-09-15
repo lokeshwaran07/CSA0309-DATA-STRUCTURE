@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main(){
+    int g[4][4]={{0,1,1,0},{1,0,1,0},{1,1,0,1},{0,0,1,0}};
+    int path[]={0,2,3}, n=3, i, valid=1;
+    for(i=0;i<n-1;i++) 
+        if(!g[path[i]][path[i+1]]) valid=0;
+    if(valid) printf("Valid Path");
+    else printf("Invalid Path");
+    return 0;
+}
