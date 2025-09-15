@@ -1,0 +1,28 @@
+#include <stdio.h>
+#define SIZE 10
+
+int hashTable[SIZE];
+
+void insert(int value) {
+    int key = value % SIZE;
+    int i = 0;
+    while (hashTable[(key + i) % SIZE] != 0)   // find empty slot
+        i++;
+    hashTable[(key + i) % SIZE] = value;
+}
+
+void display() {
+    printf("Hash Table:\n");
+    for (int i = 0; i < SIZE; i++)
+        printf("%d -> %d\n", i, hashTable[i]);
+}
+
+int main() {
+    insert(12);
+    insert(22);
+    insert(32);
+    insert(42);
+    insert(52);
+    display();
+    return 0;
+}
