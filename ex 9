@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+    int n=5, t1=0,t2=1,next,i,sum=1;
+    printf("Fibonacci: %d %d ",t1,t2);
+    for(i=3;i<=n;i++){
+        next=t1+t2;
+        printf("%d ",next);
+        sum+=next;
+        t1=t2; t2=next;
+    }
+    printf("\nSum=%d",sum);
+    return 0;
+}
