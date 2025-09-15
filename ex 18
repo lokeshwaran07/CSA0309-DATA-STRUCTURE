@@ -1,0 +1,6 @@
+#include <stdio.h>
+int main(){
+    int a[7]={5,10,15,20,25,30,35};
+    printf("5th element = %d", a[4]); //index 4
+    return 0;
+}
