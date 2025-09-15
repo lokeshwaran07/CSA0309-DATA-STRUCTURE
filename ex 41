@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main(){
+    int s1[]={1,2,3},top1=2; // bottom=1, top=3
+    int s2[]={4,5,6},top2=2; // bottom=4, top=6
+    int sum = s1[0]+s1[top1] + s2[0]+s2[top2];
+    printf("Sum=%d",sum);
+    return 0;
+}
