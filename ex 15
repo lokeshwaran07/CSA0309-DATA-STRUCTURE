@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node{ int key; struct Node* left; struct Node* right; };
+
+struct Node* newNode(int k){ 
+    struct Node* n=(struct Node*)malloc(sizeof(struct Node));
+    n->key=k; n->left=n->right=NULL; return n;
+}
+struct Node* insert(struct Node* root,int k){
+    if(!root) return newNode(k);
+    if(k<root->key) root->left=insert(root->left,k);
+    else root->right=insert(root->right,k);
+    return root;
+}
+struct Node* search(struct Node* root,int k){
+    if(!root||root->key==k) return root;
+    if(k<root->key) return search(root->left,k);
+    return search(root->right,k);
+}
+int minVal(struct Node* root){
+    while(root->left) root=root->left;
+    return root->key;
+}
+int maxVal(struct Node* root){
+    while(root->right) root=root->right;
+    return root->key;
+}
+int main(){
+    struct Node* root=NULL;
+    root=insert(root,50); insert(root,30); insert(root,70); insert(root,20); insert(root,60);
+    printf("Search 60: %s\n", search(root,60)?"Found":"Not Found");
+    printf("Min = %d, Max = %d", minVal(root), maxVal(root));
+    return 0;
+}
