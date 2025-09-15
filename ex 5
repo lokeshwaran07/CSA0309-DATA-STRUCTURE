@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main() {
+    int list1[3]={10,20,30}, list2[3]={40,50,60}, merged[6], i;
+    for(i=0;i<3;i++) merged[i]=list1[i];
+    for(i=0;i<3;i++) merged[i+3]=list2[i];
+    printf("Merged List: ");
+    for(i=0;i<6;i++) printf("%d ",merged[i]);
+    return 0;
+}
