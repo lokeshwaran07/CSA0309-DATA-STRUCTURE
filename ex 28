@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main(){
+    char a[]={'a','b','c','a','d','b'}; int i,j;
+    for(i=0;i<6;i++)
+        for(j=i+1;j<6;j++)
+            if(a[i]==a[j]) printf("'%c' repeated at index %d and %d\n",a[i],i,j);
+    return 0;
+}
