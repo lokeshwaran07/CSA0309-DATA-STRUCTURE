@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node{int d;struct Node* next;};
+int main(){
+    struct Node* head=NULL,*t,*n;
+    int arr[]={10,20,30};
+    for(int i=0;i<3;i++){
+        n=(struct Node*)malloc(sizeof(struct Node));
+        n->d=arr[i];n->next=NULL;
+        if(!head) head=n; else t->next=n;
+        t=n;
+    }
+    // insert at beginning
+    n=(struct Node*)malloc(sizeof(struct Node));
+    n->d=5;n->next=head; head=n;
+    t=head;while(t){printf("%d ",t->d);t=t->next;}
+    return 0;
+}
