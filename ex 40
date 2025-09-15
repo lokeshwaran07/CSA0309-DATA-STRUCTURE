@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main(){
+    int a[]={1,2,3,2,1},i,j;
+    for(i=0;i<5;i++){
+        int count=0;
+        for(j=0;j<5;j++) if(a[i]==a[j]) count++;
+        if(count==2){ printf("%d repeated twice\n",a[i]); }
+    }
+    return 0;
+}
