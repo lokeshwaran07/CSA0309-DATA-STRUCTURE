@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node{int d;struct Node* prev,*next;};
+int main(){
+    struct Node* h=(struct Node*)malloc(sizeof(*h));
+    h->d=1;h->prev=NULL;
+    h->next=(struct Node*)malloc(sizeof(*h));
+    h->next->d=2;h->next->prev=h;h->next->next=NULL;
+    printf("%d<->%d",h->d,h->next->d);
+    return 0;
+}
