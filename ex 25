@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node{int data;struct Node* next;};
+int main(){
+    struct Node *head=NULL,*temp; int count=0;
+    int arr[3]={10,20,30};
+    for(int i=0;i<3;i++){ 
+        struct Node* n=(struct Node*)malloc(sizeof(struct Node));
+        n->data=arr[i]; n->next=NULL;
+        if(!head) head=n; else temp->next=n;
+        temp=n;
+    }
+    temp=head; while(temp){count++; temp=temp->next;}
+    printf("No of nodes = %d",count);
+    return 0;
+}
