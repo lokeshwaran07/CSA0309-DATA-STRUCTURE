@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(){
+    int g[3][3]={{0,2,0},{2,0,1},{0,1,0}}, i,j,min=999;
+    printf("Edges:\n");
+    for(i=0;i<3;i++)
+        for(j=i+1;j<3;j++)
+            if(g[i][j]){ 
+                printf("%d-%d=%d\n",i,j,g[i][j]);
+                if(g[i][j]<min) min=g[i][j];
+            }
+    printf("Minimum edge weight = %d",min);
+    return 0;
+}
